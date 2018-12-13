@@ -26,6 +26,7 @@ class Ator extends Entity
     protected $_accessible = [
         'nome_real' => true,
         'nascimento' => true,
-        'nome_ficticio' => true
+        'nome_ficticio' => true,
+        'filme' => true
     ];
 }

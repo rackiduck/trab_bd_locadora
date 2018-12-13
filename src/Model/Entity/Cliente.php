@@ -36,6 +36,7 @@ class Cliente extends Entity
         'cep' => true,
         'rua' => true,
         'telefone' => true,
-        'telefone1' => true
+        'telefone1' => true,
+        'ator' => true
     ];
 }

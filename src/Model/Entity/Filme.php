@@ -24,6 +24,8 @@ class Filme extends Entity
      */
     protected $_accessible = [
         'titulo' => true,
-        'disponivel' => true
+        'disponivel' => true,
+        'ator' => true,
+        'categoria' => true
     ];
 }
