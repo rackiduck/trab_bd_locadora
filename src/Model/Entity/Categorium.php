@@ -8,7 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $identificador_categoria
  * @property string $categoria
- * @property int $filme_identificador
+ *
+ * @property \App\Model\Entity\Filme $filme
  */
 class Categorium extends Entity
 {
@@ -24,6 +25,6 @@ class Categorium extends Entity
      */
     protected $_accessible = [
         'categoria' => true,
-        'filme_identificador' => true
+        'filme' => true
     ];
 }

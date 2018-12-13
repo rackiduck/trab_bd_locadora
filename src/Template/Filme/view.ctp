@@ -11,18 +11,18 @@
         <li><?= $this->Form->postLink(__('Delete Filme'), ['action' => 'delete', $filme->filme_identificador], ['confirm' => __('Are you sure you want to delete # {0}?', $filme->filme_identificador)]) ?> </li>
         <li><?= $this->Html->link(__('List Filme'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Filme'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Categoria'), ['controller' => 'Categoria', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Categorium'), ['controller' => 'Categoria', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Fita'), ['controller' => 'Fita', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Fitum'), ['controller' => 'Fita', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Emprestimo'), ['controller' => 'Emprestimo', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Emprestimo'), ['controller' => 'Emprestimo', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ator'), ['controller' => 'Ator', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ator'), ['controller' => 'Ator', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Categoria'), ['controller' => 'Categoria', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Categorium'), ['controller' => 'Categoria', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="filme view large-9 medium-8 columns content">
-    <h3><?= h($filme->filme_identificador) ?></h3>
+    <h3><?= h($filme->titulo) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Titulo') ?></th>
@@ -71,14 +71,12 @@
             <tr>
                 <th scope="col"><?= __('Identificador Categoria') ?></th>
                 <th scope="col"><?= __('Categoria') ?></th>
-                <th scope="col"><?= __('Filme Identificador') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($filme->categoria as $categoria): ?>
             <tr>
                 <td><?= h($categoria->identificador_categoria) ?></td>
                 <td><?= h($categoria->categoria) ?></td>
-                <td><?= h($categoria->filme_identificador) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Categoria', 'action' => 'view', $categoria->identificador_categoria]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Categoria', 'action' => 'edit', $categoria->identificador_categoria]) ?>

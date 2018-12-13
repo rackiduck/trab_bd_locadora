@@ -59,7 +59,8 @@ class FilmeController extends AppController
             $this->Flash->error(__('The filme could not be saved. Please, try again.'));
         }
         $ator = $this->Filme->Ator->find('list', ['limit' => 200]);
-        $this->set(compact('filme', 'ator'));
+        $categoria = $this->Filme->Categoria->find('list', ['limit' => 200]);
+        $this->set(compact('filme', 'ator', 'categoria'));
     }
 
     /**
@@ -72,7 +73,7 @@ class FilmeController extends AppController
     public function edit($id = null)
     {
         $filme = $this->Filme->get($id, [
-            'contain' => ['Ator']
+            'contain' => ['Ator', 'Categoria']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $filme = $this->Filme->patchEntity($filme, $this->request->getData());
@@ -84,7 +85,8 @@ class FilmeController extends AppController
             $this->Flash->error(__('The filme could not be saved. Please, try again.'));
         }
         $ator = $this->Filme->Ator->find('list', ['limit' => 200]);
-        $this->set(compact('filme', 'ator'));
+        $categoria = $this->Filme->Categoria->find('list', ['limit' => 200]);
+        $this->set(compact('filme', 'ator', 'categoria'));
     }
 
     /**

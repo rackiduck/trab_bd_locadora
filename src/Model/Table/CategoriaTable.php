@@ -34,8 +34,11 @@ class CategoriaTable extends Table
         $this->setTable('categoria');
         $this->setDisplayField('categoria');
         $this->setPrimaryKey('identificador_categoria');
-        $this->belongsTo('Filme')
-            ->setForeignKey('filme_identificador');
+        $this->belongsToMany('Filme', [
+            'foreignKey' => 'identificador_categoria',
+            'targetForeignKey' => 'filme_identificador',
+            'joinTable' => 'filmecategoria'
+        ]);
     }
 
     /**
@@ -55,11 +58,6 @@ class CategoriaTable extends Table
             ->maxLength('categoria', 250)
             ->requirePresence('categoria', 'create')
             ->notEmpty('categoria');
-
-        $validator
-            ->integer('filme_identificador')
-            ->requirePresence('filme_identificador', 'create')
-            ->notEmpty('filme_identificador');
 
         return $validator;
     }

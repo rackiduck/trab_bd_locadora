@@ -23,7 +23,8 @@ class FilmeControllerTest extends TestCase
         'app.Categoria',
         'app.Fita',
         'app.Emprestimo',
-        'app.Atua'
+        'app.Atua',
+        'app.Filmecategoria'
     ];
 
     /**

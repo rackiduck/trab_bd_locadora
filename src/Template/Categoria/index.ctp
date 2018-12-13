@@ -19,7 +19,6 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('identificador_categoria') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('categoria') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('filme_identificador') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -28,7 +27,6 @@
             <tr>
                 <td><?= $this->Number->format($categorium->identificador_categoria) ?></td>
                 <td><?= h($categorium->categoria) ?></td>
-                <td><?= $categorium->has('filme') ? $this->Html->link($categorium->filme->filme_identificador, ['controller' => 'Filme', 'action' => 'view', $categorium->filme->filme_identificador]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $categorium->identificador_categoria]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $categorium->identificador_categoria]) ?>

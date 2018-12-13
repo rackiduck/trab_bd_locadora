@@ -20,9 +20,6 @@ class CategoriaController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Filme']
-        ];
         $categoria = $this->paginate($this->Categoria);
 
         $this->set(compact('categoria'));
@@ -75,7 +72,7 @@ class CategoriaController extends AppController
     public function edit($id = null)
     {
         $categorium = $this->Categoria->get($id, [
-            'contain' => []
+            'contain' => ['Filme']
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $categorium = $this->Categoria->patchEntity($categorium, $this->request->getData());

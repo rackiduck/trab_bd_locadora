@@ -46,8 +46,10 @@ class FilmeTable extends Table
         //     'joinTable' => 'clientgroups_clients',
         //     'through' => 'ClientgroupsClients'
         // ]);
-        $this->hasmany('Categoria', [
-            'foreignKey' => 'filme_identificador'
+        $this->belongsToMany('Categoria', [
+            'foreignKey' => 'filme_identificador',
+            'targetForeignKey' => 'identificador_categoria',
+            'joinTable' => 'filmecategoria'
         ]);
         $this->hasmany('Fita',['foreignKey' => 'filme_identificador']);
         $this->hasmany('Emprestimo', ['foreignKey' => 'filme_identificador']);

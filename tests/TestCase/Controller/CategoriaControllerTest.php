@@ -19,7 +19,8 @@ class CategoriaControllerTest extends TestCase
      */
     public $fixtures = [
         'app.Categoria',
-        'app.Filme'
+        'app.Filme',
+        'app.Filmecategoria'
     ];
 
     /**

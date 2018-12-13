@@ -24,7 +24,7 @@
         <legend><?= __('Edit Categorium') ?></legend>
         <?php
             echo $this->Form->control('categoria');
-            echo $this->Form->control('filme_identificador', ['options' => $filme]);
+            echo $this->Form->control('filme._ids', ['options' => $filme]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
